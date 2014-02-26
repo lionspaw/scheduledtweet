@@ -1,0 +1,12 @@
+@(loginForm: Form[controllers.Application.LoginClass])
+@main("Hello") {
+
+  <div id="main-cont">
+  @helper.form(action = routes.Application.login) {
+        <fieldset>
+          <input id="password" type="password" name="password">
+        </fieldset>
+    }
+  </div>
+
+}

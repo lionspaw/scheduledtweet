@@ -1,0 +1,42 @@
+@(interval: Int, lastTweet: Option[TweetsDTO], upcomings: Seq[TweetsDTO])(implicit flash: Flash)
+
+@generateUpcomings(tweets: Seq[TweetsDTO], counter: Int) = {
+  <div class="tweet @(if(counter % 2 == 0) "even" else "odd") ">
+     <span class="count">@counter.</span>
+     <img src ="@routes.ImageHandler.getImage(tweets.head.path)" alt="@tweets.head.text" />
+     <span class="author">@tweets.head.text</span>
+     @*<a class="delete">X</a>*@
+   </div>
+   @if(tweets.tail.size > 0){
+     @generateUpcomings(tweets.tail, counter + 1)
+   }
+}
+
+@main("TweetApp") {
+
+  <div id="main-cont">
+    <h2>@flash.get("msg").getOrElse("")</h2>
+    <a href="@routes.Application.generateTweets" class="menu">Generate tweets</a>
+    <a href="@routes.Application.logout" class="menu">Log out</a>
+    <br/>
+    <h2>Current interval: @interval</h2>
+    New Interval:
+    <a href="@routes.Application.setIntervalFromBrowser(1)" class="interval">1</a>
+    <a href="@routes.Application.setIntervalFromBrowser(2)" class="interval">2</a>
+    <a href="@routes.Application.setIntervalFromBrowser(3)" class="interval">3</a>
+    <a href="@routes.Application.setIntervalFromBrowser(4)" class="interval">4</a>
+    <a href="@routes.Application.setIntervalFromBrowser(6)" class="interval">6</a>
+    <a href="@routes.Application.setIntervalFromBrowser(8)" class="interval">8</a>
+    <a href="@routes.Application.setIntervalFromBrowser(12)" class="interval">12</a>
+    @if(lastTweet.isDefined){
+	    <h2>Last tweet</h2>
+	    <div class="lasttweet">   
+	      <img src ="@routes.ImageHandler.getImage(lastTweet.get.path)" alt="@lastTweet.get.text" />
+	      @lastTweet.get.text <span>@@</span> @lastTweet.get.date
+	    </div>
+    }
+    <h1>Upcoming tweets: @upcomings.size</h1>
+    @if(upcomings.size > 0) {@generateUpcomings(upcomings, 1)}
+  </div>
+
+}

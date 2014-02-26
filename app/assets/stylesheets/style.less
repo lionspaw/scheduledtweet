@@ -1,0 +1,189 @@
+﻿/* HTML5 Boilerplate from
+http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+*/
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+b,u,i,center,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary,
+time,mark,audio,video{
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  font:inherit;
+  vertical-align:baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{
+  display:block;
+}
+body{
+  line-height:1;
+}
+ol,ul{
+  list-style:none;
+}
+/* HTML5 boilerplate - end */
+
+body{
+  text-align: center;
+  font-family:museo100;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+}
+a.menu {
+  width:200px;
+}
+a.interval {
+  width:40px;
+}
+
+@mainwidth: 900px;
+@bigfont: 26px;
+@middlefont: 24px;
+@height: 150px;
+@radiusVal: 15px;
+@delHeight: 22px;
+@delBgC: #D00;
+@delC: #FFF;
+@padding:10px;
+
+#main-cont {
+  margin: 2*@padding auto;
+  width: @mainwidth;
+}
+
+h1 {
+  font-size: @bigfont;
+  font-family:museo700;
+  padding: 3*@padding 0 @padding 0;
+  clear: both;
+}
+h2 {
+  font-size: @middlefont;
+  font-family:museo500;
+  padding: @padding*2 0;
+  clear: both;
+}
+.lasttweet {
+  height:@height/2;
+  line-height:@height/2;
+  display:inline-block
+}
+.lasttweet img {
+  float:left;
+  padding-right:@padding;
+  height: @height/2;
+}
+.lasttweet span{
+  font-family:museo100i;
+}
+.tweet {
+  height: @height;
+  line-height: @height;
+  padding: @padding 0;
+  position: relative;
+}
+.tweet img {
+  float:left;
+  height:@height; 
+}
+.count {
+  float:left;
+  width: 50px;
+  font-size: @middlefont;
+}
+.author {
+  float:left;
+  padding-left: @padding;
+}
+
+.delete {
+  -webkit-border-radius: @radiusVal; 
+  -moz-border-radius: @radiusVal; 
+  border-radius: @radiusVal;
+  width:@delHeight;
+  height:@delHeight;
+  line-height:@delHeight;
+  display: inline-block;
+  font-family:museo900;
+  background-color: @delBgC;
+  color: @delC;
+  position: absolute;
+  right:@padding;
+  top:@padding;
+  
+}
+.delete:hover{
+  background-color: @delBgC+#222;
+  cursor:pointer;
+}
+.even{
+  background-color: #DDD;
+}
+.odd{
+  background-color: #F2F2F2;
+}
+/*
+ * Custom fonts
+ */
+@font-face {
+  font-family: museo100;
+  src: url('/assets/museo/MuseoSans-100.otf');
+}
+@font-face {
+  font-family: museo100i;
+  src: url('/assets/museo/MuseoSans-100Italic.otf');
+}
+@font-face {
+  font-family: museo300;
+  src: url('/assets/museo/MuseoSans-300.otf');
+}
+@font-face {
+  font-family: museo300i;
+  src: url('/assets/museo/MuseoSans-300Italic.otf');
+}
+@font-face {
+  font-family: museo500;
+  src: url('/assets/museo/MuseoSans_500.otf');
+}
+@font-face {
+  font-family: museo500i;
+  src: url('/assets/museo/MuseoSans_500_Italic.otf');
+}
+@font-face {
+  font-family: museo700;
+  src: url('/assets/museo/MuseoSans_700.otf');
+}
+@font-face {
+  font-family: museo700i;
+  src: url('/assets/museo/MuseoSans-700Italic.otf');
+}
+@font-face {
+  font-family: museo900;
+  src: url('/assets/museo/MuseoSans_900.otf');
+}
+@font-face {
+  font-family: museo900i;
+  src: url('/assets/museo/MuseoSans-900Italic.otf');
+}
+/*
+ * Custom fonts - end
+ */
+
+ 
+ 
